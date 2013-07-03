@@ -1,10 +1,12 @@
-Integrating Windows Azure Web Sites and On-Premise Applications
+Enterprise Pizza
 =================
-Throughout this session, the example of Enterprise Pizza, a fictitious pizza company, is building their pizza-ordering site atop Web Sites. They have a series of requirements that result in the reality that their site will need to tie into their store in some way or another and that their goals can't be met if they can't have direct communication between individual stores. 
+This repository contains the deck and demos for Brady Gaster's Build session, [Create Connected Business Applications with Windows Azure Websites](http://channel9.msdn.com/Events/Build/2013/3-553). The example is of Enterprise Pizza, a fictitious pizza company, and building their pizza-ordering site atop Web Sites. Their site will need to tie into their stores and to their corporate network, so that inventory and order data can be shared across locations. 
+
+This solution is demonstrated using Windows Azure Web Sites and the Windows Azure Service Bus, along with 2 custom applications that make use of Service Bus Topics and Relays to distribute the conversation. 
 
 ## Storyline ##
 
-The demos build the site's story. 
+The demos build the site's story, which the diagram below demonstrates at a high level. 
 
 ![](scenario.png)
 
