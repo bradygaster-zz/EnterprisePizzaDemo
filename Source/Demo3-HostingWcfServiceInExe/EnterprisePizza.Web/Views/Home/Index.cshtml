@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<hgroup class="title">
+    <h1>Fire off a Sample Order</h1>
+    @using (var form = Html.BeginForm("SampleOrder", "Home"))
+    {
+        <input type="submit" name="submit" value="Send" />
+    }
+</hgroup>

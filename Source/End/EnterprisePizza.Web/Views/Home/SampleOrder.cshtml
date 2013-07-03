@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "SampleOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sample Order</h2>
+<p>Thank you for your order. Please watch below for real-time status updates for your order.</p>
+<div id="status"></div>
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.signalR-1.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var con = $.hubConnection();
+            var hub = con.createHubProxy('orderStatus');
+            hub.on('statusUpdated', function (newStatus) {
+                $('#status').text(newStatus);
+                $('#status').animate({ fontSize: '24px' }, function () {
+                    $('#status').animate({ fontSize: '1em' });
+                });
+            });
+            con.start().done(function () {
+                hub.invoke('ListenForUpdates', '@ViewBag.clientId');
+                $('#status').text('Order submitted, waiting for status...');
+            });
+        });
+    </script>
+}
